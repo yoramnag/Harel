@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "03dd2c0b-a98f-4fd5-8fab-52ddd3996974",
+		"name": "Harel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3913811"
+	},
+	"item": [
+		{
+			"name": "get policy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/policies/20000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"policies",
+						"20000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validate policy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/policies/200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"policies",
+						"200"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validate policy is ONLY numbers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/policies/20000f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"policies",
+						"20000f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All Customers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/getAllCustomers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"getAllCustomers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new policy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"policyNumber\" : \"20005\",\r\n    \"premium\" : 500.0,\r\n    \"status\" : \"ACTIVE\",\r\n    \"customer\" :{\r\n        \"id\" : 10000\r\n    }\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/policies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"policies"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "20003",
+							"disabled": true
+						},
+						{
+							"key": "customer_id",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "policy_number",
+							"value": "30003",
+							"disabled": true
+						},
+						{
+							"key": "premium",
+							"value": "5000",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "ACTIVE",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validate policy all ready exist",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"policyNumber\": \"20005\",\r\n  \"premium\": 500.0,\r\n  \"status\": \"ACTIVE\",\r\n  \"customer\" :{\r\n    \"id\" : 10000\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/policies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"policies"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "20003",
+							"disabled": true
+						},
+						{
+							"key": "customer_id",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "policy_number",
+							"value": "30003",
+							"disabled": true
+						},
+						{
+							"key": "premium",
+							"value": "5000",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "ACTIVE",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validate null policy number",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"policy_number\" : \"\",\r\n    \"premium\" : 500.0,\r\n    \"status\" : \"ACTIVE\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/policies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"policies"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
